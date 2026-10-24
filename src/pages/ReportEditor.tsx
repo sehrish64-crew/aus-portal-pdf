@@ -868,7 +868,7 @@ export function ReportEditor() {
 
         @page {
           size: A4 portrait;
-          margin: 10px;
+          margin: 10mm;
         }
 
         @media print {
@@ -919,6 +919,9 @@ export function ReportEditor() {
             border: none !important;
             min-height: auto !important;
             display: block !important;
+            overflow: visible !important;
+            background: #ffffff !important;
+            color: #1e293b !important;
           }
 
           .report-editor-standard-pages {
@@ -957,14 +960,10 @@ export function ReportEditor() {
           }
 
           .report-editor-page .report-editor-footer {
-            position: fixed !important;
-            left: 0 !important;
-            right: 0 !important;
-            bottom: 0 !important;
+            position: static !important;
             margin-top: 0 !important;
             break-inside: avoid;
             page-break-inside: avoid;
-            z-index: 10;
           }
 
           .report-editor-page .report-editor-section {
