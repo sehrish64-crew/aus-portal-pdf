@@ -124,7 +124,7 @@ function StatusBadge({ status, onChange }: { status: string; onChange: (v: strin
 function SectionHeader({ icon: Icon, title, color }: { icon: React.ElementType; title: string; color: string }) {
   return (
     <div className="report-editor-section-header" style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 24 }}>
-      <div style={{ width: 36, height: 36, borderRadius: 10, backgroundColor: color, border: `1.5px solid ${color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+      <div className="report-editor-section-icon" style={{ width: 36, height: 36, borderRadius: 10, backgroundColor: color, border: `1.5px solid ${color}`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
         <Icon size={18} color="#ffffff" strokeWidth={2.5} style={{ display: 'block', width: 18, height: 18, flexShrink: 0 }} />
       </div>
       <h2 style={{ fontSize: 16, fontWeight: 700, color: '#1e293b', margin: 0, letterSpacing: '-0.01em' }}>{title}</h2>
@@ -643,6 +643,28 @@ export function ReportEditor() {
   return (
     <div className="report-editor-page" style={{ paddingBottom: 40 }}>
       <style>{`
+        .report-editor-section-header > .report-editor-section-icon {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          width: 36px !important;
+          height: 36px !important;
+          min-width: 36px !important;
+          min-height: 36px !important;
+          flex: 0 0 36px !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+
+        .report-editor-section-header > .report-editor-section-icon > svg {
+          display: block !important;
+          width: 18px !important;
+          height: 18px !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          stroke: #ffffff !important;
+        }
+
         .report-editor-au-grid {
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
